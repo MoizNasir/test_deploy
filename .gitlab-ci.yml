@@ -1,0 +1,6 @@
+run_test:
+    image: node:16-alpine
+    before_script:
+        - npm install
+    script:
+        - npm test
