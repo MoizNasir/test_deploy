@@ -5,6 +5,7 @@ variables:
 stages:
   - test
   - build
+  - deploy
 
 run_test:
   stage: test
@@ -29,4 +30,11 @@ build_image:
     - docker build -t $IMAGE_NAME:$IMAGE_TAG .
     - docker push $IMAGE_NAME:$IMAGE_TAG
     
+deploy:
+  stage: deploy
+  image: node:16-alpine
+  before_script:
+    - npm install -g vercel
+  script:
+    - vercel --token LpgDuJJ9dQiaPmXFTD9WgtDb --prod
     
