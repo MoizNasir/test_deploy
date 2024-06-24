@@ -39,4 +39,3 @@ deploy:
     - vercel --token $REG_VERCEL --prod --yes
     
     
-    
