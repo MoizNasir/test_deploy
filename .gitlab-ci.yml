@@ -17,7 +17,7 @@ build_image:
     DOCKER_TLS_CERTDIR: "/certs"
 
   before_script:
-    - echo "$REG_PASS" | docker login -u "$REG_USER" --password-stdin
+    - docker login -u $REG_USER -p $REG_PASS
 
   script:
     - docker build -t "$IMAGE_NAME:$IMAGE_TAG" .
