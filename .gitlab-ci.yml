@@ -20,7 +20,7 @@ build_image:
     - docker login -u moiznasir -p mmooiizz123
 
   script:
-    - docker build -t $IMAGE_NAME:$IMAGE_TAG .
-    - docker push $IMAGE_NAME:$IMAGE_TAG
+    - docker build -t moiznasir/moiz:react-app-1.0 .
+    - docker push moiznasir/moiz:react-app-1.0
     
     
