@@ -22,5 +22,3 @@ build_image:
   script:
     - docker build -t moiznasir/moiz:react-app-1.0 .
     - docker push moiznasir/moiz:react-app-1.0
-    
-    
