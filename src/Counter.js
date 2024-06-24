@@ -24,7 +24,7 @@ function Counter({ initialCount }) {
       <div>
         <button onClick={increment}> Increment!</button>
         <button onClick={decrement}> Decrement!</button>
-        <button onClick={restart}> Restart!</button>
+        <button onClick={restart}> Restart</button>
         <button onClick={switchSigns}> Switch Signs!!</button>
       </div>
     </div>
