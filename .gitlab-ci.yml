@@ -2,7 +2,12 @@ variables:
   IMAGE_NAME: moiznasir/moiz
   IMAGE_TAG: react-app-1.0
 
+stages:
+  - test
+  - build
+
 run_test:
+  stage: test
   image: node:16-alpine
   before_script:
     - npm install
@@ -10,6 +15,7 @@ run_test:
     - npm test
 
 build_image:
+  stage: build
   image: docker:26.1.4
   services:
     - docker:26.1.4-dind
