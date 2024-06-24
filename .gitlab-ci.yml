@@ -38,3 +38,4 @@ deploy:
   script:
     - vercel --token LpgDuJJ9dQiaPmXFTD9WgtDb --prod --yes
     
+    
