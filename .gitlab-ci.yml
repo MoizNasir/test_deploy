@@ -1,23 +1,26 @@
+variables:
+  IMAGE_NAME: moiznasir/moiz
+  IMAGE_TAG: react-app-1.0
+
 run_test:
-    image: node:16-alpine
-    before_script:
-        - npm install
-    script:
-        - npm test
+  image: node:16-alpine
+  before_script:
+    - npm install
+  script:
+    - npm test
 
 build_image:
-    image: docker:20.10.16
-    services:
-        - docker:20.10.16-dind
-    variables:
-        DOCKER_TLS_CERTDIR: "/certs"
-        IMAGE_NAME: moiznasir/moiz
-        IMAGE_TAG: react-app-1.0
-    before_script:
-         - docker login -u $REG_USER -p $REG_PASS
+  image: docker:26.1.4
+  services:
+    - docker:26.1.4-dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
 
-    script:
-        - docker build -t $IMAGE_NAME:$IMAGE_TAG .
-        - docker push $IMAGE_NAME:$IMAGE_TAG
+  before_script:
+    - docker login -u moiznasir -p mmooiizz123
 
-        
+  script:
+    - docker build -t moiznasir/moiz:react-app-1.0 .
+    - docker push moiznasir/moiz:react-app-1.0
+    
+    
