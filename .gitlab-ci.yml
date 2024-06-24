@@ -36,5 +36,5 @@ deploy:
   before_script:
     - npm install -g vercel
   script:
-    - vercel --token LpgDuJJ9dQiaPmXFTD9WgtDb --prod
+    - vercel --token LpgDuJJ9dQiaPmXFTD9WgtDb --prod --yes
     
