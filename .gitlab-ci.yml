@@ -14,7 +14,8 @@ build_image:
         IMAGE_NAME: moiznasir/moiz
         IMAGE_TAG: react-app-1.0
     before_script:
-         - docker login -u $REG_USER -p $REG_PASS
+        - echo "$REG_PASS" | docker login -u "$REG_USER" --password-stdin
+
 
     script:
         - docker build -t $IMAGE_NAME:$IMAGE_TAG .
