@@ -61,7 +61,7 @@ jobs:
 
   deploy:
     name: Deploy to Vercel
-    runs-on: ubuntu-latest
+    runs-on: node:16-alpine
     needs: build
 
     steps:
