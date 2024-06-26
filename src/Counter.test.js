@@ -34,11 +34,11 @@ describe(Counter, () => {
     expect(Number(getByTestId("count").textContent)).toEqual(0);
   });
 
-  // it("count should invert signs if the switch signs button is clicked", () => {
-  //   const { getByTestId, getByRole } = render(<Counter initialCount={50} />);
-  //   const switchBttn = getByRole("button", { name: "Switch Signs" });
-  //   expect(Number(getByTestId("count").textContent)).toEqual(50);
-  //   fireEvent.click(switchBttn);
-  //   expect(Number(getByTestId("count").textContent)).toEqual(-50);
-  // });
+  it("count should invert signs if the switch signs button is clicked", () => {
+    const { getByTestId, getByRole } = render(<Counter initialCount={50} />);
+    const switchBttn = getByRole("button", { name: "Switch Signs!!" });
+    expect(Number(getByTestId("count").textContent)).toEqual(50);
+    fireEvent.click(switchBttn);
+    expect(Number(getByTestId("count").textContent)).toEqual(-50);
+  });
 });
