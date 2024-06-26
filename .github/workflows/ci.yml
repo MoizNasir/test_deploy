@@ -61,10 +61,18 @@ jobs:
 
   deploy:
     name: Deploy to Vercel
-    runs-on: node:16-alpine
+    runs-on: ubuntu-latest
     needs: build
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
       - name: Install Vercel CLI
         run: npm install -g vercel
 
@@ -72,4 +80,3 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.REG_VERCEL }}
         run: vercel --token ${{ secrets.REG_VERCEL }} --prod --yes
-
