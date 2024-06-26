@@ -63,5 +63,3 @@ jobs:
       - env:
           VERCEL_TOKEN: ${{ secrets.REG_VERCEL }}
         run: vercel --token ${{ secrets.REG_VERCEL }} --prod --yes
-
-        
